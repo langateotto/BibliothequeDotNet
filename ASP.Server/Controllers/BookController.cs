@@ -121,5 +121,30 @@ namespace ASP.Server.Controllers
             // Il faut interoger la base pour récupérer tous les genres, pour que l'utilisateur puisse les slécétionné
             return View(new EditBookModel() { AllGenres = null });
         }
+
+        public ActionResult Delete(int id)
+        {
+            try
+            {
+                Book book = libraryDbContext.Books.First(g => g.Id == id);
+                if (book != null)
+                {
+
+                    libraryDbContext.Books.Remove(book);
+                    libraryDbContext.SaveChanges();
+                    return RedirectToAction("List");
+                }
+                else
+                {
+                    ///Todo
+                    return RedirectToAction("List");
+                }
+            }
+            catch
+            {
+                ///Todo
+                return RedirectToAction("List");
+            }
+        }
     }
 }

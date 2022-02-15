@@ -23,9 +23,8 @@
                         <td>@book.Author</td>
                         <td>@book.Content</td>
                         <td>@book.Price</td>
-                        <td><a asp-controller="Book" asp-action="Edit"> EditOld</a></td>
                         <td> @Html.ActionLink("Edit", "Edit", new { controller = "Book",  id = book.Id }) </td>
-                        <td><a>Delete</a></td>
+                        <td> @Html.ActionLink("Delete", "Delete", new { controller = "Book",  id = book.Id }) </td>
                      </tr>   
                 }
         </table>
