@@ -58,7 +58,12 @@ namespace ASP.Server.Api
         // Vous vous montre comment faire la 1er, a vous de la compléter et de faire les autres !
         public ActionResult<List<Book>> GetBooks()
         {
-            throw new NotImplementedException("You have to do it youtself");
+            //throw new NotImplementedException("You have to do it youtself");
+            return libraryDbContext.Books.ToList();
+        }
+        public ActionResult<List<Genre>> GetGenres()
+        {
+            return libraryDbContext.Genre.ToList();
         }
 
     }
