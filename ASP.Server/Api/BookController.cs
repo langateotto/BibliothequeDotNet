@@ -37,6 +37,24 @@ namespace ASP.Server.Api
         // - GetGenres
         //   - Entrée: Rien
         //   - Sortie: Liste des genres
+        public ActionResult<List<Genre>> GetGenres()
+        {
+            //throw new NotImplementedException("You have to do it youtself");
+            return libraryDbContext.Genre.ToList();
+        }
+
+        public ActionResult<Genre> PostGenre(Genre genre)
+        {
+            //throw new NotImplementedException("You have to do it youtself");
+            var newGenre = new Genre()
+            {
+                Name = genre.Name
+            };
+            libraryDbContext.Genre.Add(newGenre); 
+            libraryDbContext.SaveChanges();
+            return newGenre;
+        }
+
 
         // Aide:
         // Pour récupéré un objet d'une table :
@@ -58,8 +76,25 @@ namespace ASP.Server.Api
         // Vous vous montre comment faire la 1er, a vous de la compléter et de faire les autres !
         public ActionResult<List<Book>> GetBooks()
         {
-            throw new NotImplementedException("You have to do it youtself");
+            //throw new NotImplementedException("You have to do it youtself");
+           return  libraryDbContext.Books.ToList();
         }
+
+        public ActionResult<Book> PostBook(Book book)
+        {
+            var newBook = new Book()
+            {
+                Title = book.Title,
+                Author = book.Author,
+                Content = book.Content,
+                Price = book.Price,
+                Created = DateTime.Now
+            };
+            libraryDbContext.Books.Add(newBook);
+            libraryDbContext.SaveChanges();
+            return newBook;
+        }
+
 
     }
 }
