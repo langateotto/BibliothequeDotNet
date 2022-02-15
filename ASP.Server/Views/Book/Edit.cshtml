@@ -18,7 +18,8 @@ label {
 }
 </style>
 
-<form asp-controller="Book" asp-action="Edit"> 
+<form asp-controller="Book" asp-action="Update">
+    <input asp-for="Id" type="hidden" />
     <div class="input-group">
         <label asp-for="Name"></label>
         <input asp-for="Name" />
