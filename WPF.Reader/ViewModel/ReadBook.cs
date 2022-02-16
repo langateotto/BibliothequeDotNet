@@ -5,9 +5,11 @@ namespace WPF.Reader.ViewModel
 {
     class ReadBook : INotifyPropertyChanged
     {
+        public Book Book { get; set; }
         public event PropertyChangedEventHandler PropertyChanged;
 
         // A vous de jouer maintenant
+
     }
 
     /* Cette classe sert juste a afficher des donnée de test dans le designer */
