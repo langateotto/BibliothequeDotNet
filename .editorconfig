@@ -2,3 +2,6 @@
 
 # IDE0022: Utiliser un corps de bloc pour les méthodes
 csharp_style_expression_bodied_methods = false:silent
+
+# IDE0026: Utiliser un corps d'expression pour les indexeurs
+csharp_style_expression_bodied_indexers = false

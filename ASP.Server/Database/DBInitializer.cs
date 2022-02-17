@@ -11,6 +11,8 @@ namespace ASP.Server.Database
 {
     public class DbInitializer
     {
+        private object _books;
+
         public static void Initialize(LibraryDbContext bookDbContext)
         {
 
@@ -37,5 +39,14 @@ namespace ASP.Server.Database
 
             bookDbContext.SaveChanges();
         }
+
+        public ListBook<Book> Book
+    {
+        get { return Book; }
+    }
+       /* public int this[Book book]
+        {
+            get { return _books.IndexOf(book); }
+        }*/
     }
 }

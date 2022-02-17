@@ -24,5 +24,7 @@ namespace WPF.Reader.Pages
         {
             InitializeComponent();
         }
+
+
     }
 }
