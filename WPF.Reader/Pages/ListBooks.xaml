@@ -10,7 +10,7 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="ListBooks">
-    <StackPanel>
+    <StackPanel Orientation="Vertical" >
         <!-- 
             A vous de créer la liste avec le bon binding. Une <ListBox> fera l'affaire 
             La propriété ItemsSource doit pointé vers la propiété Books de votre dataContext actuelle 
@@ -24,6 +24,23 @@
             Command="{Binding DataContext.ItemSelectedCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Page}}}" 
             CommandParameter="{Binding .}"
         -->
+
+
+        <ListBox Name="Title" ItemsSource="{Binding Path=Books}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Foreground="Blue" Text= "{Binding Name}"></TextBlock>
+                        <TextBlock> Ecrit  par </TextBlock>
+                        <TextBlock Foreground="Blue" Text="{Binding Author}"></TextBlock>
+
+                        <Button Command="{Binding DataContext.ItemSelectedCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Page}}}" CommandParameter="{Binding .}"  Content="See Book"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+
+        </ListBox>
+
     </StackPanel>
 </Page>
 
