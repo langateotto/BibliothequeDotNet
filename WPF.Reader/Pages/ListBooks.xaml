@@ -11,31 +11,28 @@
       d:DesignHeight="200" d:DesignWidth="200"
       Title="ListBooks">
 
+
     <Grid>
-        <StackPanel Orientation = "Horizontal">
-            <ListBox Name = "listbox" Margin = "20,20,20,50" Width="100">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="23*"/>
+            <ColumnDefinition Width="17*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Orientation = "Horizontal" Margin="0,-53,3,53">
+
+
+            <ListBox x:Name = "listbox" Width="209" Background="#FFDAD7D7" FontFamily="Arial Narrow" Height="92">
                 <ListBoxItem Content = "Home" />
                 <ListBoxItem Content = "Books" />
                 <ListBoxItem Content = "Genre" />
             </ListBox>
 
-            <!--<TextBox Height = "25"
-            Name = "textBox1" 
-            Width = "100"
-            Margin = "20" 
-            HorizontalAlignment = "Left" 
-            VerticalAlignment = "Top">
 
-                <TextBox.Text>
-                    <Binding ElementName = "listbox" Path = "SelectedItem.Content"/>
-                </TextBox.Text>
-            </TextBox>-->
             <StackPanel>
                 <StackPanel.Style>
-                    <Style TargetType="StackPanel">
+                    <Style TargetType="{x:Type StackPanel}">
                         <Setter Property="Visibility" Value="Hidden" />
                         <Style.Triggers>
-                            <DataTrigger Binding="{Binding ElementName=listbox, Path=SelectedIndex }" Value="1">
+                            <DataTrigger Binding="{Binding SelectedIndex, ElementName=listbox}" Value="1">
                                 <Setter Property="Visibility" Value="Visible" />
                             </DataTrigger>
                         </Style.Triggers>
@@ -43,22 +40,19 @@
                 </StackPanel.Style>
                 <Label Content="Book" />
 
-                <ListView ItemsSource="{Binding Path= Books}" >
+                <ListView ItemsSource="{Binding Books}" >
                     <ListView.ItemTemplate>
                         <DataTemplate DataType="{x:Type model:Book}">
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock Margin="5,3,15,3"
                                     Text="{Binding Id, Mode=OneWay}" />
                                 <TextBox Width="200"
-                                    Text="{Binding Name, Mode=TwoWay,
-                                    UpdateSourceTrigger=PropertyChanged, Delay=450}"/>
+                                    Text="{Binding Name, Delay=450, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                             </StackPanel>
                         </DataTemplate>
                     </ListView.ItemTemplate>
-                </ListView>
-
+                </ListView>
             </StackPanel>
-            <Button Content = "Button 1" Width = "100" Height = "40" Margin = "10" />
         </StackPanel>
     </Grid>
 
@@ -77,6 +71,6 @@
             Command="{Binding DataContext.ItemSelectedCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Page}}}" 
             CommandParameter="{Binding .}"
         -->
-    
+
 </Page>
 
