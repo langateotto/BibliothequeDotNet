@@ -4,7 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF.Reader"
-        xmlns:model="clr-namespace:WPF.Reader.ViewModel" d:DataContext="{d:DesignInstance Type=model:Navigator, IsDesignTimeCreatable=True}"
+        xmlns:model="clr-namespace:WPF.Reader.ViewModel" 
+        d:DataContext="{d:DesignInstance Type=model:Navigator, IsDesignTimeCreatable=True}"
         mc:Ignorable="d"
         DataContext="{DynamicResource navigator}"
     Title="MainWindow" Height="700" Width="800">
@@ -13,7 +14,8 @@
     </Window.Resources>
     <DockPanel VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
         <StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom" HorizontalAlignment="Right" >
-            <Button Command="{Binding Path=GoToHome}" Width="50" Content="Accueil"/>
+            <Button Command="{Binding Path=GoToHome}" Width="50" Content="Home"/>
+
         </StackPanel>
         <Label DockPanel.Dock="Top" Content="Library system" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="30px"/>
         <ContentPresenter  Content="{Binding Path=Frame}" x:Name="Navigation"/>

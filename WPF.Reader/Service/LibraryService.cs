@@ -11,9 +11,9 @@ namespace WPF.Reader.Service
         // mais plutot LibraryService.Instance.Books.Add(...)
         // ou LibraryService.Instance.Books.Clear()
         public ObservableCollection<Book> Books { get; set; } = new ObservableCollection<Book>() {
-            new Book(),
-            new Book(),
-            new Book()
+            new Book(){ Id=1, Author="Ben1", Name="Bonjour", Content="Lorem ipsum", Price=45},
+            new Book(){ Id=2, Author="Ben2", Name="Bonjour", Content="Lorem ipsum", Price=45},
+            new Book(){ Id=3, Author="Ben3", Name="Bonjour", Content="Lorem ipsum", Price=45}
         };
 
         // C'est aussi ici que vous ajouterez les requète réseau pour récupérer les livres depuis le web service que vous avez fait

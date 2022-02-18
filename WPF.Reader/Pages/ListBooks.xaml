@@ -12,6 +12,7 @@
       Title="ListBooks">
 
 
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="23*"/>
@@ -59,6 +60,8 @@
 
 
     <!-- 
+    <StackPanel Orientation="Vertical" >
+        <!-- 
             A vous de créer la liste avec le bon binding. Une <ListBox> fera l'affaire 
             La propriété ItemsSource doit pointé vers la propiété Books de votre dataContext actuelle 
             Utilisé ListBox.ItemTemplate pour définir comment sont affiché vos items
@@ -71,6 +74,7 @@
             Command="{Binding DataContext.ItemSelectedCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Page}}}" 
             CommandParameter="{Binding .}"
         -->
+
 
 </Page>
 

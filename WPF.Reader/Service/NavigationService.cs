@@ -42,6 +42,8 @@ namespace WPF.Reader.Service
 
         public void GoBack() => Frame.GoBack();
 
+        //public void GoToDetails() => Frame.GoToDetails();
+
         /// <summary>
         /// Permet de changer la page afficher par la <see cref="Frame"/>
         /// </summary>
